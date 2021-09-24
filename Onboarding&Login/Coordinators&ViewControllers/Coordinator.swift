@@ -17,19 +17,6 @@ class Coordinator {
     // MARK: - Methods
     
     func show(_ viewController: CoordinatableViewController) {
-        // viewController.modalPresentationStyle = .popover
-        // viewController.modalTransitionStyle = .partialCurl
-        
-        if rootViewController.presentedViewController === viewController {
-            print("ViewController is already being presented")
-            return
-        }
-        
-        // if viewController.navigationController === rootViewController {
-        //     print("ViewController is already being presented")
-        //     return
-        // }
-        
         rootViewController.show(viewController as UIViewController, sender: self)
     }
     

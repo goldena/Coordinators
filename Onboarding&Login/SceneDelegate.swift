@@ -22,7 +22,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // MARK: - Composition Root
 
-        lazy var onboardingViewController = OnboardingViewController(pages: UIViewController(), UIViewController(), UIViewController())
+        let page1 = UIViewController()
+        let page2 = UIViewController()
+        let page3 = UIViewController()
+        
+        page1.view.backgroundColor = .blue
+        page2.view.backgroundColor = .yellow
+        page3.view.backgroundColor = .gray
+        
+        lazy var onboardingViewController = OnboardingViewController(pages: page1, page2, page3)
         
         lazy var signupViewController = SignupController()
         lazy var loginViewController = LoginViewController()

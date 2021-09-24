@@ -30,16 +30,11 @@ final class OnboardingViewController: UIPageViewController, CoordinatableViewCon
         setupViews()
     }
     
-    func setupViews() {
-        #warning("remove")
-        pages[0].view.backgroundColor = .blue
-        pages[1].view.backgroundColor = .yellow
-        pages[2].view.backgroundColor = .gray
-        
+    func setupViews() {        
         setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
         
-        pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).activate()
+        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).activate()
     }
     
     // MARK: - Init

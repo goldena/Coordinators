@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class SignupController: CoordinatableUIViewController {
+final class SignupController: UIViewController, CoordinatableViewController {
+    
+    var coordinator: Coordinator!
     
     override func viewDidLoad() {
         super.viewDidLoad()

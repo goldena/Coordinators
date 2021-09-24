@@ -16,7 +16,7 @@
 		CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */; };
 		CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F426FCCF0900395EE5 /* SignupController.swift */; };
 		CF3950F726FCD21D00395EE5 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */; };
-		CF3950FF26FDCECD00395EE5 /* CoordinatableUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950FE26FDCECD00395EE5 /* CoordinatableUIViewController.swift */; };
+		CF39510126FDE4B700395EE5 /* CoordinatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510026FDE4B700395EE5 /* CoordinatableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CF3950F426FCCF0900395EE5 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
-		CF3950FE26FDCECD00395EE5 /* CoordinatableUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableUIViewController.swift; sourceTree = "<group>"; };
+		CF39510026FDE4B700395EE5 /* CoordinatableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CF3950F026FCC72B00395EE5 /* Coordinator.swift */,
-				CF3950FE26FDCECD00395EE5 /* CoordinatableUIViewController.swift */,
+				CF39510026FDE4B700395EE5 /* CoordinatableViewController.swift */,
 				CF3950F826FCD22A00395EE5 /* ViewControllers */,
 			);
 			path = "Coordinators&ViewControllers";
@@ -184,8 +184,8 @@
 				CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */,
 				CF3950E126FCC6A600395EE5 /* OnboardingViewController.swift in Sources */,
 				CF3950DD26FCC6A600395EE5 /* AppDelegate.swift in Sources */,
-				CF3950FF26FDCECD00395EE5 /* CoordinatableUIViewController.swift in Sources */,
 				CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */,
+				CF39510126FDE4B700395EE5 /* CoordinatableViewController.swift in Sources */,
 				CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */,
 				CF3950F726FCD21D00395EE5 /* ViewsFactory.swift in Sources */,
 				CF3950DF26FCC6A600395EE5 /* SceneDelegate.swift in Sources */,

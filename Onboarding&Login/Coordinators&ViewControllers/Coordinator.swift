@@ -11,21 +11,21 @@ class Coordinator {
     
     // MARK: - Properties
     
-    private(set) var viewControllers: [CoordinatableUIViewController] = []
-    let rootViewController: CoordinatableUIViewController
+    private(set) var viewControllers: [CoordinatableViewController] = []
+    let rootViewController: CoordinatableViewController
     
     // MARK: - Methods
     
-    func show(_ viewController: CoordinatableUIViewController) {
+    func show(_ viewController: CoordinatableViewController) {
         // viewController.modalPresentationStyle = .popover
         // viewController.modalTransitionStyle = .partialCurl
         
-        rootViewController.show(viewController, sender: self)
+        rootViewController.show(viewController as UIViewController, sender: self)
     }
     
     // MARK: - Init
     
-    init(root: CoordinatableUIViewController, controllers: CoordinatableUIViewController...) {
+    init(root: CoordinatableViewController, controllers: CoordinatableViewController...) {
         self.rootViewController = root
         root.coordinator = self
         

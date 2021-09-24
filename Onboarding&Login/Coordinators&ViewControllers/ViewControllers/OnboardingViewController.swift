@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class OnboardingViewController: CoordinatableUIViewController {
+final class OnboardingViewController: UIViewController, CoordinatableViewController {
+    
+    var coordinator: Coordinator!
             
     // MARK: - Properties
     
@@ -55,7 +57,7 @@ final class OnboardingViewController: CoordinatableUIViewController {
     // MARK: - Targets
     
     @objc func toLoginButtonPressed(_ sender: UIButton) {
-        coordinator.presentViewController(coordinator.viewControllers[0])
+        coordinator.show(coordinator.viewControllers[0])
     }
     
 }

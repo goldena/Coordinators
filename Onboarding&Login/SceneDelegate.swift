@@ -10,7 +10,9 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-        
+    
+    // MARK: - Root properties
+    
     var loginCoordinator: Coordinator!
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,11 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // MARK: - Composition Root
 
-        lazy var onboardingViewController = OnboardingViewController()
+        lazy var onboardingViewController = OnboardingViewController(pages: UIViewController(), UIViewController(), UIViewController())
+        
         lazy var signupViewController = SignupController()
         lazy var loginViewController = LoginViewController()
         
-        loginCoordinator = Coordinator(root: onboardingViewController, controllers: signupViewController, loginViewController)
+        loginCoordinator = Coordinator(root: signupViewController, controllers: onboardingViewController, loginViewController)
+        
+        // MARK: - End of Composition Root
         
         window?.rootViewController = loginCoordinator.rootViewController
         window?.makeKeyAndVisible()

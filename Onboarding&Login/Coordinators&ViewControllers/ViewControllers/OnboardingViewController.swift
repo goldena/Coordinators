@@ -7,58 +7,80 @@
 
 import UIKit
 
-final class OnboardingViewController: UIViewController, CoordinatableViewController {
-    
-    var coordinator: Coordinator!
-            
+final class OnboardingViewController: UIPageViewController, CoordinatableViewController {
+                
     // MARK: - Properties
+
+    var coordinator: Coordinator!
     
-    private lazy var label: UILabel = {
-        makeLabel(text: "Onboarding", font: .systemFont(ofSize: 32), addTo: view)
-    }()
+    private var pages: [UIViewController] = []
     
-    private lazy var button: UIButton = {
-        makeButton(type: .system, title: "to Login", font: .systemFont(ofSize: 20), addTo: view)
+    lazy var pageControl: UIPageControl = {
+        makePageControl(numberOfPages: pages.count, addTo: view)
     }()
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewDidLayoutSubviews() {
-        DispatchQueue.main.async {
-            self.setupViews()
-            self.setupTargets()
-        }
+        
+        dataSource = self
+        delegate = self
+        
+        setupViews()
     }
     
     func setupViews() {
-        view.backgroundColor = .green
-        button.backgroundColor = .blue
+        #warning("remove")
+        pages[0].view.backgroundColor = .blue
+        pages[1].view.backgroundColor = .yellow
+        pages[2].view.backgroundColor = .gray
         
-        button.layer.cornerRadius = button.frame.height / 2
-
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
         
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: label.centerYAnchor, constant: 50).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    func setupTargets() {
-        button.addTarget(self, action: #selector(toLoginButtonPressed), for: .touchUpInside)
+    // MARK: - Init
+    
+    init(pages: UIViewController...) {
+        self.pages = pages
+        
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     }
     
-    // MARK: - Targets
-    
-    @objc func toLoginButtonPressed(_ sender: UIButton) {
-        coordinator.show(coordinator.viewControllers[0])
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
 
+extension OnboardingViewController: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let index = pages.firstIndex(of: viewController),
+              index > 0 else { return nil }
+        
+        return pages[index - 1]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let index = pages.firstIndex(of: viewController),
+              index < pages.count - 1 else { return nil }
+        
+        return pages[index + 1]
+    }
+    
+}
+
+extension OnboardingViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if let viewControllers = pageViewController.viewControllers {
+            if let viewControllerIndex = self.pages.firstIndex(of: viewControllers[0]) {
+                self.pageControl.currentPage = viewControllerIndex
+            }
+        }
+    }
+}

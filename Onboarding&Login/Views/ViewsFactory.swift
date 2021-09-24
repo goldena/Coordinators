@@ -52,3 +52,15 @@ func makeView(addTo: UIView? = nil) -> UIView {
     
     return view
 }
+
+func makePageControl(numberOfPages: Int, currentPage: Int = 0, addTo: UIView? = nil) -> UIPageControl {
+    let pageControl = UIPageControl()
+        
+    pageControl.translatesAutoresizingMaskIntoConstraints = false
+    pageControl.numberOfPages = numberOfPages
+    pageControl.currentPage = 0
+    
+    addTo?.addSubview(pageControl)
+    
+    return pageControl
+}

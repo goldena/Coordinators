@@ -20,6 +20,16 @@ class Coordinator {
         // viewController.modalPresentationStyle = .popover
         // viewController.modalTransitionStyle = .partialCurl
         
+        if rootViewController.presentedViewController === viewController {
+            print("ViewController is already being presented")
+            return
+        }
+        
+        // if viewController.navigationController === rootViewController {
+        //     print("ViewController is already being presented")
+        //     return
+        // }
+        
         rootViewController.show(viewController as UIViewController, sender: self)
     }
     
@@ -30,7 +40,6 @@ class Coordinator {
         root.coordinator = self
         
         self.viewControllers.append(contentsOf: controllers)
-        print(self.viewControllers)
         controllers.forEach { $0.coordinator = self }
     }
     

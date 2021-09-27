@@ -64,3 +64,18 @@ func makePageControl(numberOfPages: Int, currentPage: Int = 0, addTo: UIView? = 
     
     return pageControl
 }
+
+func makeTableView(CellClass: AnyClass? = nil, cellReuseIdentifier: String? = nil, addTo: UIView? = nil) -> UITableView {
+    let tableView = UITableView()
+    
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    
+    if CellClass != nil,
+       let identifier = cellReuseIdentifier {
+        tableView.register(CellClass, forCellReuseIdentifier: identifier)
+    }
+    
+    addTo?.addSubview(tableView)
+    
+    return tableView
+}

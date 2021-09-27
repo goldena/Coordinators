@@ -41,12 +41,6 @@ final class SignupView: CustomView {
         button.centerXAnchor.constraint(equalTo: centerXAnchor).activate()
         button.centerYAnchor.constraint(equalTo: label.centerYAnchor, constant: 50).activate()
     }
-    
-//    override func draw(_ rect: CGRect) {
-//        super.draw(rect)
-//
-//        self.button.layer.cornerRadius = self.button.frame.height / 2
-//    }
   
     override func layoutSubviews() {
         super.layoutSubviews()

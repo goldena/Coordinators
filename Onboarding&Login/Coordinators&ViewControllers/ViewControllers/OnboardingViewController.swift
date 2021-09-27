@@ -7,7 +7,8 @@
 
 import UIKit
 
-#warning("make subclass of uipageviewcontroller")
+#warning("make subclass of uipageviewcontroller and other relevant classes")
+
 final class OnboardingViewController: UIPageViewController {
                 
     // MARK: - Properties

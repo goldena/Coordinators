@@ -13,7 +13,7 @@ final class LoginViewController: CoordinatableViewControllerWithCustomView {
     
     var loginView: LoginView {
         guard let loginView = view as? LoginView else {
-            fatalError("Wrong CustomView type \(CustomViewSubtype) passed to the controller \(self)")
+            fatalError("Wrong CustomView type \(ViewType) passed to the controller \(self)")
         }
         
         return loginView
@@ -34,7 +34,7 @@ final class LoginViewController: CoordinatableViewControllerWithCustomView {
     }
 
     @objc func toLoginButtonPressed(_ sender: UIButton) {
-        coordinator.show(coordinator.viewControllers[0])
+        coordinator.show(viewControllerType: LoginViewController.self)
     }
 
 }

@@ -13,6 +13,7 @@ class CustomView: UIView {
     
     func setupViews() {}
     func setupLayout() {}
+    func render() {}
     
     // MARK: - Init
     
@@ -21,6 +22,7 @@ class CustomView: UIView {
         
         setupViews()
         setupLayout()
+        render()
     }
     
     required init?(coder: NSCoder) {

@@ -21,6 +21,8 @@
 		CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440742701AB9B0026B4FB /* CustomView.swift */; };
 		CFB440792701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */; };
 		CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407A2701C8280026B4FB /* LoginView.swift */; };
+		CFB4407D2701DD580026B4FB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407C2701DD580026B4FB /* TableViewController.swift */; };
+		CFB4407F2701DDAE0026B4FB /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407E2701DDAE0026B4FB /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		CFB440742701AB9B0026B4FB /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableViewControllerWithCustomView.swift; sourceTree = "<group>"; };
 		CFB4407A2701C8280026B4FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CFB4407C2701DD580026B4FB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		CFB4407E2701DDAE0026B4FB /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				CF3950F426FCCF0900395EE5 /* SignupController.swift */,
 				CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */,
 				CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */,
+				CFB4407C2701DD580026B4FB /* TableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				CFB440742701AB9B0026B4FB /* CustomView.swift */,
 				CF39510726FE10D000395EE5 /* SignupView.swift */,
 				CFB4407A2701C8280026B4FB /* LoginView.swift */,
+				CFB4407E2701DDAE0026B4FB /* TableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 			files = (
 				CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */,
 				CF3950E126FCC6A600395EE5 /* OnboardingViewController.swift in Sources */,
+				CFB4407D2701DD580026B4FB /* TableViewController.swift in Sources */,
+				CFB4407F2701DDAE0026B4FB /* TableView.swift in Sources */,
 				CF3950DD26FCC6A600395EE5 /* AppDelegate.swift in Sources */,
 				CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */,
 				CFB440792701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift in Sources */,

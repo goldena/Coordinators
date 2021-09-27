@@ -32,11 +32,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         lazy var onboardingViewController = OnboardingViewController(pages: page1, page2, page3)
         
-        lazy var signupViewController = SignupController(CustomViewSubtype: SignupView.self)
-        lazy var loginViewController = LoginViewController(CustomViewSubtype: LoginView.self)
+        lazy var signupViewController = SignupController(ViewType: SignupView.self)
+        lazy var loginViewController = LoginViewController(ViewType: LoginView.self)
+        lazy var tableViewController = TableViewController(ViewType: TableView.self)
         
-        #warning("get onboardingViewController back")
-        loginCoordinator = Coordinator(rootViewController: signupViewController, otherViewControllers: loginViewController)
+        loginCoordinator = Coordinator(rootViewController: tableViewController, otherViewControllers: loginViewController, signupViewController)
         
         // MARK: - End of Composition Root
         

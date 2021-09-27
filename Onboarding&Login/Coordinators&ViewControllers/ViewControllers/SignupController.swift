@@ -13,7 +13,7 @@ final class SignupController: CoordinatableViewControllerWithCustomView {
     
     var signupView: SignupView {
         guard let signupView = view as? SignupView else {
-            fatalError("Wrong CustomView type \(CustomViewSubtype) passed to the controller \(self)")
+            fatalError("Wrong CustomView type \(ViewType) passed to the controller \(self)")
         }
         
         return signupView
@@ -34,7 +34,7 @@ final class SignupController: CoordinatableViewControllerWithCustomView {
     }
     
     @objc func toLoginButtonPressed(_ sender: UIButton) {
-        coordinator.show(coordinator.viewControllers[0])
+        coordinator.show(viewControllerType: LoginViewController.self)
     }
     
 }

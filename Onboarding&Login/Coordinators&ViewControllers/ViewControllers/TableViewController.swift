@@ -50,9 +50,9 @@ extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            coordinator.show(viewControllerType: LoginViewController.self)
+            coordinator?.show(viewControllerType: LoginViewController.self)
         case 1:
-            coordinator.show(viewControllerType: SignupController.self)
+            coordinator?.show(viewControllerType: SignupController.self)
         default:
             return
         }

@@ -13,7 +13,8 @@ final class OnboardingViewController: UIPageViewController {
                 
     // MARK: - Properties
 
-    var coordinator: Coordinator!
+    var coordinator: Coordinator?
+    var tag: String?
     
     private var pages: [UIViewController] = []
     

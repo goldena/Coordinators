@@ -13,15 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // MARK: - Root properties
     
-    var loginCoordinator: Coordinator!
+    var loginCoordinator: Coordinator?
     
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = scene as? UIWindowScene else { return }
-        
-        window = UIWindow(windowScene: windowScene)
-        
-        // MARK: - Composition Root
-
+    func composeApp() {
         let page1 = UIViewController()
         let page2 = UIViewController()
         let page3 = UIViewController()
@@ -37,10 +31,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         lazy var tableViewController = TableViewController(ViewType: TableView.self)
         
         loginCoordinator = Coordinator(rootViewController: tableViewController, otherViewControllers: loginViewController, signupViewController)
+    }
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
         
-        // MARK: - End of Composition Root
+        window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = loginCoordinator.rootViewController
+        // MARK: - Composition Root
+        composeApp()
+                
+        window?.rootViewController = loginCoordinator?.rootViewController
         window?.makeKeyAndVisible()
     }
 

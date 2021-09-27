@@ -34,7 +34,7 @@ final class SignupController: CoordinatableViewControllerWithCustomView {
     }
     
     @objc func toLoginButtonPressed(_ sender: UIButton) {
-        coordinator.show(viewControllerType: LoginViewController.self)
+        coordinator?.show(viewControllerType: LoginViewController.self)
     }
     
 }

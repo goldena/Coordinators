@@ -30,11 +30,11 @@ final class LoginViewController: CoordinatableViewControllerWithCustomView {
     override func setupTargets() {
         super.setupTargets()
         
-        loginView.button.addTarget(self, action: #selector(toLoginButtonPressed), for: .touchUpInside)
+        loginView.button.addTarget(self, action: #selector(toSignupButtonPressed), for: .touchUpInside)
     }
 
-    @objc func toLoginButtonPressed(_ sender: UIButton) {
-        coordinator.show(viewControllerType: LoginViewController.self)
+    @objc func toSignupButtonPressed(_ sender: UIButton) {
+        coordinator?.show(viewControllerType: SignupController.self)
     }
 
 }

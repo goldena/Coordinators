@@ -16,7 +16,7 @@ class LoginView: CustomView {
     }()
     
     lazy var button: UIButton = {
-        makeButton(type: .system, title: "to Login", font: .systemFont(ofSize: 20), addTo: self)
+        makeButton(type: .system, title: "to Signup", font: .systemFont(ofSize: 20), addTo: self)
     }()
     
     // MARK: - View Lifecycle

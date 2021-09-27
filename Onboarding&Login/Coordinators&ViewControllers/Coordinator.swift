@@ -11,23 +11,23 @@ class Coordinator {
     
     // MARK: - Properties
     
-    private(set) var viewControllers: [CoordinatableViewController] = []
-    let rootViewController: CoordinatableViewController
+    private(set) var viewControllers: [CoordinatableViewControllerWithCustomView] = []
+    let rootViewController: CoordinatableViewControllerWithCustomView
     
     // MARK: - Methods
     
-    func show(_ viewController: CoordinatableViewController) {
+    func show(_ viewController: CoordinatableViewControllerWithCustomView) {
         rootViewController.show(viewController as UIViewController, sender: self)
     }
     
     // MARK: - Init
     
-    init(root: CoordinatableViewController, controllers: CoordinatableViewController...) {
-        self.rootViewController = root
-        root.coordinator = self
+    init(rootViewController: CoordinatableViewControllerWithCustomView, otherViewControllers: CoordinatableViewControllerWithCustomView...) {
+        self.rootViewController = rootViewController
+        self.viewControllers.append(contentsOf: otherViewControllers)
         
-        self.viewControllers.append(contentsOf: controllers)
-        controllers.forEach { $0.coordinator = self }
+        rootViewController.coordinator = self
+        otherViewControllers.forEach { $0.coordinator = self }
     }
     
 }

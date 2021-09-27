@@ -1,30 +1,30 @@
 //
-//  SignupView.swift
+//  LoginView.swift
 //  Onboarding&Login
 //
-//  Created by Denis Goloborodko on 24.09.21.
+//  Created by Denis Goloborodko on 27.09.21.
 //
 
 import UIKit
 
-final class SignupView: CustomView {
+class LoginView: CustomView {
 
     // MARK: - Properties
-        
+    
     private lazy var label: UILabel = {
-        makeLabel(text: "Signup", font: .systemFont(ofSize: 32), addTo: self)
+        makeLabel(text: "Login", font: .systemFont(ofSize: 32), addTo: self)
     }()
     
     lazy var button: UIButton = {
-        makeButton(type: .system, title: "to Signup", font: .systemFont(ofSize: 20), addTo: self)
+        makeButton(type: .system, title: "to Login", font: .systemFont(ofSize: 20), addTo: self)
     }()
-
+    
     // MARK: - View Lifecycle
     
     override func setupViews() {
         super.setupViews()
         
-        backgroundColor = .gray
+        backgroundColor = .darkGray
 
         button.backgroundColor = .blue
 
@@ -45,5 +45,6 @@ final class SignupView: CustomView {
         button.centerXAnchor.constraint(equalTo: centerXAnchor).activate()
         button.centerYAnchor.constraint(equalTo: label.centerYAnchor, constant: 50).activate()
     }
-    
+
+
 }

@@ -7,7 +7,8 @@
 
 import UIKit
 
-final class OnboardingViewController: UIPageViewController, CoordinatableViewController {
+#warning("make subclass of uipageviewcontroller")
+final class OnboardingViewController: UIPageViewController {
                 
     // MARK: - Properties
 
@@ -70,12 +71,12 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
 }
 
 extension OnboardingViewController: UIPageViewControllerDelegate {
+    
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        
-        if let viewControllers = pageViewController.viewControllers {
-            if let viewControllerIndex = self.pages.firstIndex(of: viewControllers[0]) {
-                self.pageControl.currentPage = viewControllerIndex
-            }
+        if let viewController = pageViewController.viewControllers?[0],
+           let index = pages.firstIndex(of: viewController) {
+            self.pageControl.currentPage = index
         }
     }
+    
 }

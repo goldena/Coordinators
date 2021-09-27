@@ -7,35 +7,31 @@
 
 import UIKit
 
-final class SignupController: UIViewController, CoordinatableViewController {
-                
+final class SignupController: CoordinatableViewControllerWithCustomView {
+    
     // MARK: - Properties
     
-    var coordinator: Coordinator!
-
     var signupView: SignupView {
-        view as! SignupView
+        guard let signupView = view as? SignupView else {
+            fatalError("Wrong CustomView type \(CustomViewSubtype) passed to the controller \(self)")
+        }
+        
+        return signupView
     }
     
-    // MARK: - View Lifecycle
-    
-    override func loadView() {
-        let signupView = SignupView()
-
-        self.view = signupView
-    }
+    // MARK: - ViewLifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        setupTargets()
-    }
-        
-    func setupTargets() {
-        signupView.button.addTarget(self, action: #selector(toLoginButtonPressed), for: .touchUpInside)
     }
     
     // MARK: - Targets
+    
+    override func setupTargets() {
+        super.setupTargets()
+        
+        signupView.button.addTarget(self, action: #selector(toLoginButtonPressed), for: .touchUpInside)
+    }
     
     @objc func toLoginButtonPressed(_ sender: UIButton) {
         coordinator.show(coordinator.viewControllers[0])

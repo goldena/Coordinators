@@ -7,55 +7,32 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController, CoordinatableViewController {
+final class LoginViewController: CoordinatableViewControllerWithCustomView {
     
-    var coordinator: Coordinator!
-            
     // MARK: - Properties
     
-    private lazy var label: UILabel = {
-        makeLabel(text: "Login", font: .systemFont(ofSize: 32), addTo: view)
-    }()
-    
-    private lazy var button: UIButton = {
-        makeButton(type: .system, title: "to Login", font: .systemFont(ofSize: 20), addTo: view)
-    }()
+    var loginView: LoginView {
+        guard let loginView = view as? LoginView else {
+            fatalError("Wrong CustomView type \(CustomViewSubtype) passed to the controller \(self)")
+        }
+        
+        return loginView
+    }
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func viewDidLayoutSubviews() {
-        DispatchQueue.main.async {
-            self.setupViews()
-            self.setupTargets()
-        }
-    }
-    
-    func setupViews() {
-        view.backgroundColor = .blue
-        button.backgroundColor = .black
-        
-        button.layer.cornerRadius = button.frame.height / 2
-
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: label.centerYAnchor, constant: 50).isActive = true
-    }
-    
-    func setupTargets() {
-        button.addTarget(self, action: #selector(toLoginButtonPressed), for: .touchUpInside)
-    }
-    
+     
     // MARK: - Targets
     
+    override func setupTargets() {
+        super.setupTargets()
+        
+        loginView.button.addTarget(self, action: #selector(toLoginButtonPressed), for: .touchUpInside)
+    }
+
     @objc func toLoginButtonPressed(_ sender: UIButton) {
         coordinator.show(coordinator.viewControllers[0])
     }

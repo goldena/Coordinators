@@ -16,9 +16,11 @@
 		CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */; };
 		CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F426FCCF0900395EE5 /* SignupController.swift */; };
 		CF3950F726FCD21D00395EE5 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */; };
-		CF39510126FDE4B700395EE5 /* CoordinatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510026FDE4B700395EE5 /* CoordinatableViewController.swift */; };
 		CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */; };
 		CF39510826FE10D000395EE5 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510726FE10D000395EE5 /* SignupView.swift */; };
+		CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440742701AB9B0026B4FB /* CustomView.swift */; };
+		CFB440792701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */; };
+		CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407A2701C8280026B4FB /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +35,11 @@
 		CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CF3950F426FCCF0900395EE5 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
-		CF39510026FDE4B700395EE5 /* CoordinatableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableViewController.swift; sourceTree = "<group>"; };
 		CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		CF39510726FE10D000395EE5 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		CFB440742701AB9B0026B4FB /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableViewControllerWithCustomView.swift; sourceTree = "<group>"; };
+		CFB4407A2701C8280026B4FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			children = (
 				CF3950E026FCC6A600395EE5 /* OnboardingViewController.swift */,
 				CF3950F426FCCF0900395EE5 /* SignupController.swift */,
+				CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */,
 				CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
@@ -95,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				CF3950F026FCC72B00395EE5 /* Coordinator.swift */,
-				CF39510026FDE4B700395EE5 /* CoordinatableViewController.swift */,
 				CF3950F826FCD22A00395EE5 /* ViewControllers */,
 			);
 			path = "Coordinators&ViewControllers";
@@ -104,7 +108,9 @@
 		CF3950FA26FCD28C00395EE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFB440742701AB9B0026B4FB /* CustomView.swift */,
 				CF39510726FE10D000395EE5 /* SignupView.swift */,
+				CFB4407A2701C8280026B4FB /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,10 +204,12 @@
 				CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */,
 				CF3950E126FCC6A600395EE5 /* OnboardingViewController.swift in Sources */,
 				CF3950DD26FCC6A600395EE5 /* AppDelegate.swift in Sources */,
+				CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */,
+				CFB440792701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift in Sources */,
 				CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift in Sources */,
 				CF39510826FE10D000395EE5 /* SignupView.swift in Sources */,
 				CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */,
-				CF39510126FDE4B700395EE5 /* CoordinatableViewController.swift in Sources */,
+				CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */,
 				CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */,
 				CF3950F726FCD21D00395EE5 /* ViewsFactory.swift in Sources */,
 				CF3950DF26FCC6A600395EE5 /* SceneDelegate.swift in Sources */,

@@ -11,7 +11,7 @@ class LoginView: CustomView {
 
     // MARK: - Properties
     
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         makeLabel(text: "Login", font: .systemFont(ofSize: 32), addTo: self)
     }()
     
@@ -27,10 +27,6 @@ class LoginView: CustomView {
         backgroundColor = .darkGray
 
         button.backgroundColor = .blue
-
-        DispatchQueue.main.async {
-            self.button.layer.cornerRadius = self.button.frame.height / 2
-        }
     }
     
     override func setupLayout() {
@@ -46,5 +42,9 @@ class LoginView: CustomView {
         button.centerYAnchor.constraint(equalTo: label.centerYAnchor, constant: 50).activate()
     }
 
-
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        button.layer.cornerRadius = button.frame.height / 2
+    }
 }

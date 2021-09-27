@@ -33,8 +33,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         lazy var onboardingViewController = OnboardingViewController(pages: page1, page2, page3)
         
         lazy var signupViewController = SignupController(CustomViewSubtype: SignupView.self)
-        
-        #warning("Change custom view")
         lazy var loginViewController = LoginViewController(CustomViewSubtype: LoginView.self)
         
         #warning("get onboardingViewController back")

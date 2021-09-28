@@ -11,6 +11,7 @@ class CoordinatableViewControllerWithCustomView: UIViewController {
 
     // MARK: - Properties
     
+    
     var coordinator: Coordinator?
     
     // Optional tag for cases when there is more than one instance of the same ViewController type
@@ -38,8 +39,10 @@ class CoordinatableViewControllerWithCustomView: UIViewController {
     // MARK: - Initializers
     
     init(ViewType: CustomView.Type) {
-        self.ViewType = ViewType
+        print(ViewType)
         
+        self.ViewType = ViewType
+
         super.init(nibName: nil, bundle: nil)
     }
     

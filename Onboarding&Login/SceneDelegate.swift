@@ -18,18 +18,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // MARK: - Composition Root
 
-        #if DEBUG
-            setRootViewController(CompositionRoot.shared.currentCoordinator?.rootViewController)
+#if DEBUG
+        setRootViewController(CompositionRoot.shared.currentCoordinator?.rootViewController, withUIViewAnimationOptions: .curveEaseInOut)
         
-            CompositionRoot.shared.delegate = self
-        #else
-            fatalError("Not ready for production")
-        #endif
+        CompositionRoot.shared.delegate = self
+#else
+        fatalError("Not ready for production")
+#endif
     }
 
-    func setRootViewController(_ viewController: UIViewController?) {
-        window?.rootViewController = viewController
-        window?.makeKeyAndVisible()
+    func setRootViewController(_ viewController: UIViewController?, withUIViewAnimationOptions: UIView.AnimationOptions? = nil) {
+        guard let window = window else { return }
+        
+        window.rootViewController = viewController
+        
+        UIView.transition(with: window, duration: 0.5, options: withUIViewAnimationOptions ?? [], animations: {
+            window.rootViewController = viewController
+        }, completion: nil)
+        
+        window.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -65,7 +72,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate: CompositionRootDelegate {
 
     func coordinatorDidChange(_ sender: Any) {
-        
         setRootViewController(CompositionRoot.mainCoordinator?.rootViewController)
     }
 

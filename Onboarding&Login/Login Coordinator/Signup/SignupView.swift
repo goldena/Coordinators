@@ -44,9 +44,7 @@ final class SignupView: CustomView {
   
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        print("layoutSubviews")
-        
+         
         button.layer.cornerRadius = button.frame.height / 2
     }
     

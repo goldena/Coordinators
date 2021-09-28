@@ -10,9 +10,10 @@ import UIKit
 class Coordinator {
     
     // MARK: - Properties
+    weak var compositionRoot: CompositionRoot?
     
-    private(set) var viewControllers: [CoordinatableViewControllerWithCustomView] = []
-    let rootViewController: CoordinatableViewControllerWithCustomView
+    var viewControllers: [CoordinatableViewControllerWithCustomView] = []
+    var rootViewController: CoordinatableViewControllerWithCustomView?
     
     // MARK: - Methods
     
@@ -22,7 +23,7 @@ class Coordinator {
             let viewControllersWithTheSameTag = viewControllers.filter { $0.tag == tag }
             
             if viewControllersWithTheSameTag.count == 1 {
-                rootViewController.show(viewControllersWithTheSameTag[0], sender: self)
+                rootViewController?.show(viewControllersWithTheSameTag[0], sender: self)
                 return
             } else {
                 fatalError("\(viewControllersWithTheSameTag.count) ViewControllers with the same tag \(tag)")
@@ -31,19 +32,30 @@ class Coordinator {
             
         for controller in viewControllers {
             if type(of: controller) === viewControllerType {
-                rootViewController.show(controller as UIViewController, sender: self)
+                rootViewController?.show(controller as UIViewController, sender: self)
             }
         }
     }
     
     // MARK: - Init
     
-    init(rootViewController: CoordinatableViewControllerWithCustomView, otherViewControllers: CoordinatableViewControllerWithCustomView...) {
+    init(
+        compositionRoot: CompositionRoot,
+        rootViewController: CoordinatableViewControllerWithCustomView,
+        otherViewControllers: CoordinatableViewControllerWithCustomView...
+    ) {
+        self.compositionRoot = compositionRoot
         self.rootViewController = rootViewController
         self.viewControllers.append(contentsOf: otherViewControllers)
         
         rootViewController.coordinator = self
         otherViewControllers.forEach { $0.coordinator = self }
+    }
+    
+    deinit {
+        #if DEBUG
+            print("\(self) deinitialized")
+        #endif
     }
     
 }

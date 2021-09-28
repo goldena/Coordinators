@@ -34,7 +34,9 @@ final class LoginViewController: CoordinatableViewControllerWithCustomView {
     }
 
     @objc func toSignupButtonPressed(_ sender: UIButton) {
-        coordinator?.show(viewControllerType: SignupController.self)
+        #warning("change")
+        
+        CompositionRoot.shared.changeCoordinator(from: &CompositionRoot.loginCoordinator, to: CompositionRoot.mainCoordinator)
     }
 
 }

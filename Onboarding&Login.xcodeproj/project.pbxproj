@@ -23,6 +23,7 @@
 		CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407A2701C8280026B4FB /* LoginView.swift */; };
 		CFB4407D2701DD580026B4FB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407C2701DD580026B4FB /* TableViewController.swift */; };
 		CFB4407F2701DDAE0026B4FB /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407E2701DDAE0026B4FB /* TableView.swift */; };
+		CFB440862702110A0026B4FB /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440852702110A0026B4FB /* CompositionRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CFB4407A2701C8280026B4FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CFB4407C2701DD580026B4FB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CFB4407E2701DDAE0026B4FB /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		CFB440852702110A0026B4FB /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +79,12 @@
 			isa = PBXGroup;
 			children = (
 				CF3950FB26FCD2A200395EE5 /* Model&Logic */,
-				CF39510626FE109800395EE5 /* UIKit helpers */,
-				CF3950FA26FCD28C00395EE5 /* Views */,
-				CF3950F926FCD25200395EE5 /* Coordinators&ViewControllers */,
+				CF3950F926FCD25200395EE5 /* Login Coordinator */,
+				CFB44084270208F70026B4FB /* Main Coordinator */,
+				CF39510626FE109800395EE5 /* Other */,
 				CF3950DC26FCC6A600395EE5 /* AppDelegate.swift */,
 				CF3950DE26FCC6A600395EE5 /* SceneDelegate.swift */,
+				CFB440852702110A0026B4FB /* CompositionRoot.swift */,
 				CF3950E526FCC6A800395EE5 /* Assets.xcassets */,
 				CF3950E726FCC6A800395EE5 /* LaunchScreen.storyboard */,
 				CF3950EA26FCC6A800395EE5 /* Info.plist */,
@@ -89,36 +92,14 @@
 			path = "Onboarding&Login";
 			sourceTree = "<group>";
 		};
-		CF3950F826FCD22A00395EE5 /* ViewControllers */ = {
+		CF3950F926FCD25200395EE5 /* Login Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				CF3950E026FCC6A600395EE5 /* OnboardingViewController.swift */,
-				CF3950F426FCCF0900395EE5 /* SignupController.swift */,
-				CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */,
-				CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */,
-				CFB4407C2701DD580026B4FB /* TableViewController.swift */,
+				CFB440822702079F0026B4FB /* Onboarding */,
+				CFB440812702076E0026B4FB /* Signup */,
+				CFB440802702074C0026B4FB /* Login */,
 			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		CF3950F926FCD25200395EE5 /* Coordinators&ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				CF3950F026FCC72B00395EE5 /* Coordinator.swift */,
-				CF3950F826FCD22A00395EE5 /* ViewControllers */,
-			);
-			path = "Coordinators&ViewControllers";
-			sourceTree = "<group>";
-		};
-		CF3950FA26FCD28C00395EE5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CFB440742701AB9B0026B4FB /* CustomView.swift */,
-				CF39510726FE10D000395EE5 /* SignupView.swift */,
-				CFB4407A2701C8280026B4FB /* LoginView.swift */,
-				CFB4407E2701DDAE0026B4FB /* TableView.swift */,
-			);
-			path = Views;
+			path = "Login Coordinator";
 			sourceTree = "<group>";
 		};
 		CF3950FB26FCD2A200395EE5 /* Model&Logic */ = {
@@ -128,13 +109,59 @@
 			path = "Model&Logic";
 			sourceTree = "<group>";
 		};
-		CF39510626FE109800395EE5 /* UIKit helpers */ = {
+		CF39510626FE109800395EE5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				CF3950F026FCC72B00395EE5 /* Coordinator.swift */,
+				CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */,
+				CFB440742701AB9B0026B4FB /* CustomView.swift */,
 				CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */,
 				CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */,
 			);
-			path = "UIKit helpers";
+			path = Other;
+			sourceTree = "<group>";
+		};
+		CFB440802702074C0026B4FB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CFB4407A2701C8280026B4FB /* LoginView.swift */,
+				CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CFB440812702076E0026B4FB /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				CF39510726FE10D000395EE5 /* SignupView.swift */,
+				CF3950F426FCCF0900395EE5 /* SignupController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		CFB440822702079F0026B4FB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CF3950E026FCC6A600395EE5 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CFB44083270207B60026B4FB /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				CFB4407E2701DDAE0026B4FB /* TableView.swift */,
+				CFB4407C2701DD580026B4FB /* TableViewController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		CFB44084270208F70026B4FB /* Main Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CFB44083270207B60026B4FB /* Table */,
+			);
+			path = "Main Coordinator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +244,7 @@
 				CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift in Sources */,
 				CF39510826FE10D000395EE5 /* SignupView.swift in Sources */,
 				CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */,
+				CFB440862702110A0026B4FB /* CompositionRoot.swift in Sources */,
 				CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */,
 				CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */,
 				CF3950F726FCD21D00395EE5 /* ViewsFactory.swift in Sources */,
@@ -289,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -344,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

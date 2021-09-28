@@ -8,43 +8,30 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+        
     var window: UIWindow?
-    
-    // MARK: - Root properties
-    
-    var loginCoordinator: Coordinator?
-    
-    func composeApp() {
-        let page1 = UIViewController()
-        let page2 = UIViewController()
-        let page3 = UIViewController()
         
-        page1.view.backgroundColor = .blue
-        page2.view.backgroundColor = .yellow
-        page3.view.backgroundColor = .gray
-        
-        lazy var onboardingViewController = OnboardingViewController(pages: page1, page2, page3)
-        
-        lazy var signupViewController = SignupController(ViewType: SignupView.self)
-        lazy var loginViewController = LoginViewController(ViewType: LoginView.self)
-        lazy var tableViewController = TableViewController(ViewType: TableView.self)
-        
-        loginCoordinator = Coordinator(rootViewController: tableViewController, otherViewControllers: loginViewController, signupViewController)
-    }
-    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
         window = UIWindow(windowScene: windowScene)
         
         // MARK: - Composition Root
-        composeApp()
-                
-        window?.rootViewController = loginCoordinator?.rootViewController
-        window?.makeKeyAndVisible()
+
+        #if DEBUG
+            setRootViewController(CompositionRoot.shared.currentCoordinator?.rootViewController)
+        
+            CompositionRoot.shared.delegate = self
+        #else
+            fatalError("Not ready for production")
+        #endif
     }
 
+    func setRootViewController(_ viewController: UIViewController?) {
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -75,3 +62,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate: CompositionRootDelegate {
+
+    func coordinatorDidChange(_ sender: Any) {
+        
+        setRootViewController(CompositionRoot.mainCoordinator?.rootViewController)
+    }
+
+}

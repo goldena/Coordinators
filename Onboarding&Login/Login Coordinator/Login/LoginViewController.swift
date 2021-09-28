@@ -13,7 +13,7 @@ final class LoginViewController: CoordinatableViewControllerWithCustomView {
     
     var loginView: LoginView {
         guard let loginView = view as? LoginView else {
-            fatalError("Wrong CustomView type \(ViewType) passed to the controller \(self)")
+            fatalError("Wrong CustomView type \(type(of: view)) passed to the controller \(self)")
         }
         
         return loginView

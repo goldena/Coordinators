@@ -13,7 +13,7 @@ final class SignupController: CoordinatableViewControllerWithCustomView {
     
     var signupView: SignupView {
         guard let signupView = view as? SignupView else {
-            fatalError("Wrong CustomView type \(ViewType) passed to the controller \(self)")
+            fatalError("Wrong CustomView type \(type(of: view)) passed to the controller \(self)")
         }
         
         return signupView

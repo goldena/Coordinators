@@ -49,9 +49,9 @@ final class CompositionRoot {
 
         lazy var onboardingViewController = OnboardingViewController(pages: page1, page2, page3)
         
-        lazy var signupViewController = SignupController(ViewType: SignupView.self)
-        lazy var loginViewController = LoginViewController(ViewType: LoginView.self)
-        lazy var tableViewController = TableViewController(ViewType: TableView.self)
+        lazy var signupViewController = SignupController(customView: SignupView())
+        lazy var loginViewController = LoginViewController(customView: LoginView())
+        lazy var tableViewController = TableViewController(customView: TableView())
 
         Self.loginCoordinator = Coordinator(compositionRoot: self, rootViewController: tableViewController, otherViewControllers: loginViewController)
         Self.mainCoordinator = Coordinator(compositionRoot: self, rootViewController: signupViewController)

@@ -11,19 +11,17 @@ class CoordinatableViewControllerWithCustomView: UIViewController {
 
     // MARK: - Properties
     
-    
     var coordinator: Coordinator?
+    
+    var customView: CustomView
     
     // Optional tag for cases when there is more than one instance of the same ViewController type
     var tag: String?
-    
-    // Used for instantiating of a particular Custom View Type injected into the ViewController
-    var ViewType: CustomView.Type
-    
+        
     // MARK: - View Lifecycle
     
     override func loadView() {
-        view = ViewType.init(frame: .zero)
+        view = customView
     }
     
     override func viewDidLoad() {
@@ -38,10 +36,8 @@ class CoordinatableViewControllerWithCustomView: UIViewController {
 
     // MARK: - Initializers
     
-    init(ViewType: CustomView.Type) {
-        print(ViewType)
-        
-        self.ViewType = ViewType
+    init(customView: CustomView) {
+        self.customView = customView
 
         super.init(nibName: nil, bundle: nil)
     }

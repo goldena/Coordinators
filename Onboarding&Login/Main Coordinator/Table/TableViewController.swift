@@ -13,7 +13,7 @@ class TableViewController: CoordinatableViewControllerWithCustomView {
     
     var tableView: TableView {
         guard let tableView = view as? TableView else {
-            fatalError("Wrong CustomView type \(ViewType) passed to the controller \(self)")
+            fatalError("Wrong CustomView type \(type(of: view)) passed to the controller \(self)")
         }
         
         return tableView

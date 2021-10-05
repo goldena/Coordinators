@@ -19,7 +19,7 @@ final class OnboardingViewController: UIPageViewController {
     private var pages: [UIViewController] = []
     
     lazy var pageControl: UIPageControl = {
-        makePageControl(numberOfPages: pages.count, addTo: view)
+        UIPageControl(numberOfPages: pages.count, addTo: view)
     }()
     
     // MARK: - View Lifecycle
@@ -37,7 +37,7 @@ final class OnboardingViewController: UIPageViewController {
         setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
         
         pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).activate()
-        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).activate()
+        pageControl.centerX()
     }
     
     // MARK: - Init

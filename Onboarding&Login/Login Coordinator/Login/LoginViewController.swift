@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginViewController: CoordinatableViewControllerWithCustomView {
+final class LoginViewController: CustomViewController {
     
     // MARK: - Properties
     

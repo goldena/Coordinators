@@ -15,11 +15,12 @@
 		CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F026FCC72B00395EE5 /* Coordinator.swift */; };
 		CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */; };
 		CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F426FCCF0900395EE5 /* SignupController.swift */; };
-		CF3950F726FCD21D00395EE5 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */; };
+		CF3950F726FCD21D00395EE5 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F626FCD21D00395EE5 /* UIKit+Extensions.swift */; };
 		CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */; };
 		CF39510826FE10D000395EE5 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510726FE10D000395EE5 /* SignupView.swift */; };
+		CF733F9E270C443600F23EC4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733F9D270C443600F23EC4 /* UIView+Extension.swift */; };
 		CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440742701AB9B0026B4FB /* CustomView.swift */; };
-		CFB440792701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */; };
+		CFB440792701B5870026B4FB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440782701B5870026B4FB /* CustomViewController.swift */; };
 		CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407A2701C8280026B4FB /* LoginView.swift */; };
 		CFB4407D2701DD580026B4FB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407C2701DD580026B4FB /* TableViewController.swift */; };
 		CFB4407F2701DDAE0026B4FB /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407E2701DDAE0026B4FB /* TableView.swift */; };
@@ -37,11 +38,12 @@
 		CF3950F026FCC72B00395EE5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CF3950F426FCCF0900395EE5 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
-		CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
+		CF3950F626FCD21D00395EE5 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		CF39510726FE10D000395EE5 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		CF733F9D270C443600F23EC4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CFB440742701AB9B0026B4FB /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
-		CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatableViewControllerWithCustomView.swift; sourceTree = "<group>"; };
+		CFB440782701B5870026B4FB /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		CFB4407A2701C8280026B4FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CFB4407C2701DD580026B4FB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CFB4407E2701DDAE0026B4FB /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -113,9 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				CF3950F026FCC72B00395EE5 /* Coordinator.swift */,
-				CFB440782701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift */,
+				CFB440782701B5870026B4FB /* CustomViewController.swift */,
 				CFB440742701AB9B0026B4FB /* CustomView.swift */,
-				CF3950F626FCD21D00395EE5 /* ViewsFactory.swift */,
+				CF3950F626FCD21D00395EE5 /* UIKit+Extensions.swift */,
+				CF733F9D270C443600F23EC4 /* UIView+Extension.swift */,
 				CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */,
 			);
 			path = Other;
@@ -236,18 +239,19 @@
 			files = (
 				CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */,
 				CF3950E126FCC6A600395EE5 /* OnboardingViewController.swift in Sources */,
+				CF733F9E270C443600F23EC4 /* UIView+Extension.swift in Sources */,
 				CFB4407D2701DD580026B4FB /* TableViewController.swift in Sources */,
 				CFB4407F2701DDAE0026B4FB /* TableView.swift in Sources */,
 				CF3950DD26FCC6A600395EE5 /* AppDelegate.swift in Sources */,
 				CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */,
-				CFB440792701B5870026B4FB /* CoordinatableViewControllerWithCustomView.swift in Sources */,
+				CFB440792701B5870026B4FB /* CustomViewController.swift in Sources */,
 				CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift in Sources */,
 				CF39510826FE10D000395EE5 /* SignupView.swift in Sources */,
 				CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */,
 				CFB440862702110A0026B4FB /* CompositionRoot.swift in Sources */,
 				CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */,
 				CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */,
-				CF3950F726FCD21D00395EE5 /* ViewsFactory.swift in Sources */,
+				CF3950F726FCD21D00395EE5 /* UIKit+Extensions.swift in Sources */,
 				CF3950DF26FCC6A600395EE5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +393,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YLBX7YJ47Z;
+				DEVELOPMENT_TEAM = 77622V66Z5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Onboarding&Login/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -416,7 +420,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YLBX7YJ47Z;
+				DEVELOPMENT_TEAM = 77622V66Z5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Onboarding&Login/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

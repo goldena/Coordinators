@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SignupController: CoordinatableViewControllerWithCustomView {
+final class SignupController: CustomViewController {
     
     // MARK: - Properties
     

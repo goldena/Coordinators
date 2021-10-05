@@ -12,8 +12,8 @@ class Coordinator {
     // MARK: - Properties
     weak var compositionRoot: CompositionRoot?
     
-    var viewControllers: [CoordinatableViewControllerWithCustomView] = []
-    var rootViewController: CoordinatableViewControllerWithCustomView?
+    var viewControllers: [CustomViewController] = []
+    var rootViewController: CustomViewController?
     
     // MARK: - Methods
     
@@ -41,8 +41,8 @@ class Coordinator {
     
     init(
         compositionRoot: CompositionRoot,
-        rootViewController: CoordinatableViewControllerWithCustomView,
-        otherViewControllers: CoordinatableViewControllerWithCustomView...
+        rootViewController: CustomViewController,
+        otherViewControllers: CustomViewController...
     ) {
         self.compositionRoot = compositionRoot
         self.rootViewController = rootViewController

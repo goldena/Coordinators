@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewController: CoordinatableViewControllerWithCustomView {
+class TableViewController: CustomViewController {
 
     var tableViewData = [1, 2, 3]
     

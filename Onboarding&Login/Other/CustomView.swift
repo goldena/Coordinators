@@ -1,31 +1,22 @@
-//
-//  CustomView.swift
-//  Onboarding&Login
-//
-//  Created by Denis Goloborodko on 27.09.21.
-//
-
 import UIKit
 
-class CustomView: UIView {
+open class CustomView: UIView {
     
     // MARK: - View Lifecycle
     
-    func setupViews() {}
-    func setupLayout() {}
-    func render() {}
+    open func setupLayout() {}
+    open func setupView() {}
     
     // MARK: - Init
     
-    required override init(frame: CGRect) {
+    public required override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupViews()
+        setupView()
         setupLayout()
-        render()
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

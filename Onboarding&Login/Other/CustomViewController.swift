@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoordinatableViewControllerWithCustomView: UIViewController {
+class CustomViewController: UIViewController {
 
     // MARK: - Properties
     

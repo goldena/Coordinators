@@ -72,7 +72,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate: CompositionRootDelegate {
 
     func coordinatorDidChange(_ sender: Any) {
-        setRootViewController(CompositionRoot.mainCoordinator?.rootViewController)
+        setRootViewController(CompositionRoot.mainFlowCoordinator?.rootViewController)
     }
 
 }

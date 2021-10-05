@@ -33,7 +33,7 @@ class LoginView: CustomView {
         button.sizeXY(width: 100, height: 50)
         
         button.centerX()
-        button.centerY(offset: 50)
+        button.centerY(.withAnchor(label.centerYAnchor)).offset(50)
     }
 
     override func layoutSubviews() {

@@ -36,7 +36,7 @@ final class LoginViewController: CustomViewController {
     @objc func toSignupButtonPressed(_ sender: UIButton) {
         #warning("change")
         
-        CompositionRoot.shared.changeCoordinator(from: &CompositionRoot.loginCoordinator, to: CompositionRoot.mainCoordinator)
+        CompositionRoot.shared.changeCoordinator(from: &CompositionRoot.loginFlowCoordinator, to: CompositionRoot.mainFlowCoordinator)
     }
 
 }

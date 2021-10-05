@@ -15,10 +15,19 @@
 		CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F026FCC72B00395EE5 /* Coordinator.swift */; };
 		CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */; };
 		CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F426FCCF0900395EE5 /* SignupController.swift */; };
-		CF3950F726FCD21D00395EE5 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3950F626FCD21D00395EE5 /* UIKit+Extensions.swift */; };
-		CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */; };
+		CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extensions.swift */; };
 		CF39510826FE10D000395EE5 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39510726FE10D000395EE5 /* SignupView.swift */; };
-		CF733F9E270C443600F23EC4 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733F9D270C443600F23EC4 /* UIView+Extension.swift */; };
+		CF733F9E270C443600F23EC4 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733F9D270C443600F23EC4 /* UIView+Constraints.swift */; };
+		CF733FA1270C7B6200F23EC4 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FA0270C7B6200F23EC4 /* UILabel+Extensions.swift */; };
+		CF733FA3270C7B8F00F23EC4 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FA2270C7B8F00F23EC4 /* UITextField+Extensions.swift */; };
+		CF733FA5270C7BDB00F23EC4 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FA4270C7BDB00F23EC4 /* UIButton+Extensions.swift */; };
+		CF733FA7270C7C4E00F23EC4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FA6270C7C4E00F23EC4 /* UIView+Extensions.swift */; };
+		CF733FA9270C7C7B00F23EC4 /* UIPageControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FA8270C7C7B00F23EC4 /* UIPageControl+Extensions.swift */; };
+		CF733FAB270C7C9E00F23EC4 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FAA270C7C9E00F23EC4 /* UITableView+Extensions.swift */; };
+		CF733FAD270C7CCB00F23EC4 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FAC270C7CCB00F23EC4 /* UIScrollView+Extensions.swift */; };
+		CF733FAF270C7D0900F23EC4 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FAE270C7D0900F23EC4 /* UIStackView+Extensions.swift */; };
+		CF733FB3270C833700F23EC4 /* UIView+EdgeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FB2270C833700F23EC4 /* UIView+EdgeConstraints.swift */; };
+		CF733FB5270C844E00F23EC4 /* UIView+Resistance&Hugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FB4270C844E00F23EC4 /* UIView+Resistance&Hugging.swift */; };
 		CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440742701AB9B0026B4FB /* CustomView.swift */; };
 		CFB440792701B5870026B4FB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440782701B5870026B4FB /* CustomViewController.swift */; };
 		CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407A2701C8280026B4FB /* LoginView.swift */; };
@@ -38,10 +47,19 @@
 		CF3950F026FCC72B00395EE5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CF3950F226FCCEDD00395EE5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CF3950F426FCCF0900395EE5 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
-		CF3950F626FCD21D00395EE5 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
-		CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extensions.swift"; sourceTree = "<group>"; };
 		CF39510726FE10D000395EE5 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		CF733F9D270C443600F23EC4 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		CF733F9D270C443600F23EC4 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		CF733FA0270C7B6200F23EC4 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FA2270C7B8F00F23EC4 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FA4270C7BDB00F23EC4 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FA6270C7C4E00F23EC4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FA8270C7C7B00F23EC4 /* UIPageControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageControl+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FAA270C7C9E00F23EC4 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FAC270C7CCB00F23EC4 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FAE270C7D0900F23EC4 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		CF733FB2270C833700F23EC4 /* UIView+EdgeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EdgeConstraints.swift"; sourceTree = "<group>"; };
+		CF733FB4270C844E00F23EC4 /* UIView+Resistance&Hugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Resistance&Hugging.swift"; sourceTree = "<group>"; };
 		CFB440742701AB9B0026B4FB /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		CFB440782701B5870026B4FB /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		CFB4407A2701C8280026B4FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -83,6 +101,7 @@
 				CF3950FB26FCD2A200395EE5 /* Model&Logic */,
 				CF3950F926FCD25200395EE5 /* Login Coordinator */,
 				CFB44084270208F70026B4FB /* Main Coordinator */,
+				CF733F9F270C7B3400F23EC4 /* UIKit Extensions */,
 				CF39510626FE109800395EE5 /* Other */,
 				CF3950DC26FCC6A600395EE5 /* AppDelegate.swift */,
 				CF3950DE26FCC6A600395EE5 /* SceneDelegate.swift */,
@@ -114,14 +133,62 @@
 		CF39510626FE109800395EE5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				CF3950F026FCC72B00395EE5 /* Coordinator.swift */,
 				CFB440782701B5870026B4FB /* CustomViewController.swift */,
-				CFB440742701AB9B0026B4FB /* CustomView.swift */,
-				CF3950F626FCD21D00395EE5 /* UIKit+Extensions.swift */,
-				CF733F9D270C443600F23EC4 /* UIView+Extension.swift */,
-				CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift */,
+				CF3950F026FCC72B00395EE5 /* Coordinator.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		CF733F9F270C7B3400F23EC4 /* UIKit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF733FB9270C872E00F23EC4 /* NSLayoutConstraints */,
+				CF733FB8270C86AB00F23EC4 /* Custom Views */,
+				CF733FB7270C868F00F23EC4 /* Convenience Initialization */,
+				CF733FB6270C867900F23EC4 /* Constraints */,
+			);
+			path = "UIKit Extensions";
+			sourceTree = "<group>";
+		};
+		CF733FB6270C867900F23EC4 /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				CF733F9D270C443600F23EC4 /* UIView+Constraints.swift */,
+				CF733FB4270C844E00F23EC4 /* UIView+Resistance&Hugging.swift */,
+				CF733FB2270C833700F23EC4 /* UIView+EdgeConstraints.swift */,
+			);
+			path = Constraints;
+			sourceTree = "<group>";
+		};
+		CF733FB7270C868F00F23EC4 /* Convenience Initialization */ = {
+			isa = PBXGroup;
+			children = (
+				CF733FAE270C7D0900F23EC4 /* UIStackView+Extensions.swift */,
+				CF733FAC270C7CCB00F23EC4 /* UIScrollView+Extensions.swift */,
+				CF733FA4270C7BDB00F23EC4 /* UIButton+Extensions.swift */,
+				CF733FA2270C7B8F00F23EC4 /* UITextField+Extensions.swift */,
+				CF733FA0270C7B6200F23EC4 /* UILabel+Extensions.swift */,
+				CF733FA6270C7C4E00F23EC4 /* UIView+Extensions.swift */,
+				CF733FA8270C7C7B00F23EC4 /* UIPageControl+Extensions.swift */,
+				CF733FAA270C7C9E00F23EC4 /* UITableView+Extensions.swift */,
+			);
+			path = "Convenience Initialization";
+			sourceTree = "<group>";
+		};
+		CF733FB8270C86AB00F23EC4 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFB440742701AB9B0026B4FB /* CustomView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		CF733FB9270C872E00F23EC4 /* NSLayoutConstraints */ = {
+			isa = PBXGroup;
+			children = (
+				CF39510426FE0E1400395EE5 /* NSLayoutConstraint+Extensions.swift */,
+			);
+			path = NSLayoutConstraints;
 			sourceTree = "<group>";
 		};
 		CFB440802702074C0026B4FB /* Login */ = {
@@ -237,21 +304,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF733FA7270C7C4E00F23EC4 /* UIView+Extensions.swift in Sources */,
+				CF733FA1270C7B6200F23EC4 /* UILabel+Extensions.swift in Sources */,
 				CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */,
 				CF3950E126FCC6A600395EE5 /* OnboardingViewController.swift in Sources */,
-				CF733F9E270C443600F23EC4 /* UIView+Extension.swift in Sources */,
+				CF733F9E270C443600F23EC4 /* UIView+Constraints.swift in Sources */,
+				CF733FB3270C833700F23EC4 /* UIView+EdgeConstraints.swift in Sources */,
+				CF733FA5270C7BDB00F23EC4 /* UIButton+Extensions.swift in Sources */,
 				CFB4407D2701DD580026B4FB /* TableViewController.swift in Sources */,
+				CF733FA3270C7B8F00F23EC4 /* UITextField+Extensions.swift in Sources */,
 				CFB4407F2701DDAE0026B4FB /* TableView.swift in Sources */,
+				CF733FAF270C7D0900F23EC4 /* UIStackView+Extensions.swift in Sources */,
 				CF3950DD26FCC6A600395EE5 /* AppDelegate.swift in Sources */,
+				CF733FA9270C7C7B00F23EC4 /* UIPageControl+Extensions.swift in Sources */,
+				CF733FAB270C7C9E00F23EC4 /* UITableView+Extensions.swift in Sources */,
 				CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */,
+				CF733FB5270C844E00F23EC4 /* UIView+Resistance&Hugging.swift in Sources */,
+				CF733FAD270C7CCB00F23EC4 /* UIScrollView+Extensions.swift in Sources */,
 				CFB440792701B5870026B4FB /* CustomViewController.swift in Sources */,
-				CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extension.swift in Sources */,
+				CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				CF39510826FE10D000395EE5 /* SignupView.swift in Sources */,
 				CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */,
 				CFB440862702110A0026B4FB /* CompositionRoot.swift in Sources */,
 				CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */,
 				CF3950F326FCCEDD00395EE5 /* LoginViewController.swift in Sources */,
-				CF3950F726FCD21D00395EE5 /* UIKit+Extensions.swift in Sources */,
 				CF3950DF26FCC6A600395EE5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

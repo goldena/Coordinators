@@ -9,28 +9,33 @@ import UIKit
 
 protocol CompositionRootDelegate: AnyObject {
     
+    // func didSelectUser(_ sender: Any, user: User)
     func coordinatorDidChange(_ sender: Any)
     
 }
 
 final class CompositionRoot {
     
+    static var signupViewController = SignupController(customView: SignupView())
+
     static let shared = CompositionRoot()
     
-    static var loginCoordinator: Coordinator?
-    static var mainCoordinator: Coordinator?
+    static var loginFlowCoordinator: Coordinator?
+    static var mainFlowCoordinator: Coordinator?
     
     weak var delegate: CompositionRootDelegate?
     
     var currentCoordinator: Coordinator? {
-        if Self.loginCoordinator != nil { return Self.loginCoordinator }
-        if Self.mainCoordinator != nil { return Self.mainCoordinator }
+        if Self.loginFlowCoordinator != nil { return Self.loginFlowCoordinator }
+        if Self.mainFlowCoordinator != nil { return Self.mainFlowCoordinator }
         
         return nil
     }
     
     func changeCoordinator(from: inout Coordinator?, to: Coordinator?) {
         delegate?.coordinatorDidChange(self)
+        
+        Self.mainFlowCoordinator = Coordinator(compositionRoot: self, rootViewController: CompositionRoot.signupViewController)
         
         from?.viewControllers = []
         from?.rootViewController = nil
@@ -49,12 +54,11 @@ final class CompositionRoot {
 
         lazy var onboardingViewController = OnboardingViewController(pages: page1, page2, page3)
         
-        lazy var signupViewController = SignupController(customView: SignupView())
         lazy var loginViewController = LoginViewController(customView: LoginView())
         lazy var tableViewController = TableViewController(customView: TableView())
 
-        Self.loginCoordinator = Coordinator(compositionRoot: self, rootViewController: tableViewController, otherViewControllers: loginViewController)
-        Self.mainCoordinator = Coordinator(compositionRoot: self, rootViewController: signupViewController)
+        Self.loginFlowCoordinator = Coordinator(compositionRoot: self, rootViewController: tableViewController, otherViewControllers: loginViewController)
+        //
     }
     
 }

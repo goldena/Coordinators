@@ -34,7 +34,7 @@ final class SignupView: CustomView {
         button.sizeY(50)
 
         button.centerX()
-        button.centerY(offset: 50)
+        button.centerY().offset(50)
     }
   
     override func layoutSubviews() {

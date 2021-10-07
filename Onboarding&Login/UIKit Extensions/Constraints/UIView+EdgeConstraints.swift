@@ -12,25 +12,21 @@ import UIKit
 public extension UIView {
  
     enum EdgeConstraintX {
-        
-        case toBounds
-        case toSafeArea
-        case toMargins
-        case toAnchor(NSLayoutAnchor<NSLayoutXAxisAnchor>)
-        
+        case bounds
+        case safeArea
+        case margins
+        case anchor(NSLayoutAnchor<NSLayoutXAxisAnchor>)
     }
 
     enum EdgeConstraintY {
-        
-        case toBounds
-        case toSafeArea
-        case toMargins
-        case toAnchor(NSLayoutAnchor<NSLayoutYAxisAnchor>)
-        
+        case bounds
+        case safeArea
+        case margins
+        case anchor(NSLayoutAnchor<NSLayoutYAxisAnchor>)
     }
     
     @discardableResult
-    func leading(_ edgeConstraintX: EdgeConstraintX) -> NSLayoutConstraint {
+    func leading(to edgeConstraintX: EdgeConstraintX) -> NSLayoutConstraint {
         var constraint = NSLayoutConstraint()
         
         guard let superview = superview else {
@@ -40,18 +36,18 @@ public extension UIView {
         }
                 
         switch edgeConstraintX {
-        case .toBounds:
+        case .bounds:
             constraint = leadingAnchor.constraint(equalTo: superview.leadingAnchor)
             
-        case .toSafeArea:
+        case .safeArea:
             constraint = leadingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.leadingAnchor)
             
-        case .toMargins:
+        case .margins:
             let leadingMargin = superview.directionalLayoutMargins.leading
             
             constraint = leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: leadingMargin)
             
-        case .toAnchor(let anchor):
+        case .anchor(let anchor):
             constraint = leadingAnchor.constraint(equalTo: anchor)
         }
         
@@ -60,7 +56,7 @@ public extension UIView {
     }
     
     @discardableResult
-    func trailing(_ edgeConstraintX: EdgeConstraintX) -> NSLayoutConstraint {
+    func trailing(to edgeConstraintX: EdgeConstraintX) -> NSLayoutConstraint {
         var constraint = NSLayoutConstraint()
 
         guard let superview = superview else {
@@ -70,18 +66,18 @@ public extension UIView {
         }
         
         switch edgeConstraintX {
-        case .toBounds:
+        case .bounds:
             constraint = trailingAnchor.constraint(equalTo: superview.trailingAnchor).activate()
             
-        case .toSafeArea:
+        case .safeArea:
             constraint = trailingAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.trailingAnchor).activate()
             
-        case .toMargins:
+        case .margins:
             let trailingMargin = superview.directionalLayoutMargins.trailing
             
             constraint = trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: trailingMargin).activate()
             
-        case .toAnchor(let anchor):
+        case .anchor(let anchor):
             constraint = trailingAnchor.constraint(equalTo: anchor).activate()
         }
         
@@ -90,7 +86,7 @@ public extension UIView {
     }
     
     @discardableResult
-    func top(_ edgeConstraintY: EdgeConstraintY) -> NSLayoutConstraint {
+    func top(to edgeConstraintY: EdgeConstraintY) -> NSLayoutConstraint {
         var constraint = NSLayoutConstraint()
 
         guard let superview = superview else {
@@ -100,18 +96,18 @@ public extension UIView {
         }
         
         switch edgeConstraintY {
-        case .toBounds:
+        case .bounds:
             constraint = topAnchor.constraint(equalTo: superview.topAnchor).activate()
             
-        case .toSafeArea:
+        case .safeArea:
             constraint = topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor).activate()
             
-        case .toMargins:
+        case .margins:
             let topMargin = superview.directionalLayoutMargins.top
 
             constraint = topAnchor.constraint(equalTo: superview.topAnchor, constant: topMargin).activate()
             
-        case .toAnchor(let anchor):
+        case .anchor(let anchor):
             constraint = topAnchor.constraint(equalTo: anchor).activate()
         }
         
@@ -120,7 +116,7 @@ public extension UIView {
     }
     
     @discardableResult
-    func bottom(_ edgeConstraintY: EdgeConstraintY) -> NSLayoutConstraint {
+    func bottom(to edgeConstraintY: EdgeConstraintY) -> NSLayoutConstraint {
         var constraint = NSLayoutConstraint()
 
         guard let superview = superview else {
@@ -130,18 +126,18 @@ public extension UIView {
         }
         
         switch edgeConstraintY {
-        case .toBounds:
+        case .bounds:
             constraint = bottomAnchor.constraint(equalTo: superview.bottomAnchor).activate()
             
-        case .toSafeArea:
+        case .safeArea:
             constraint = bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor).activate()
             
-        case .toMargins:
+        case .margins:
             let bottomMargin = superview.directionalLayoutMargins.top
             
             constraint = bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: bottomMargin).activate()
             
-        case .toAnchor(let anchor):
+        case .anchor(let anchor):
             constraint = bottomAnchor.constraint(equalTo: anchor).activate()
         }
         
@@ -149,29 +145,5 @@ public extension UIView {
         return constraint
     }
     
-    // MARK: - Filling superview with an optional padding
-    
-    func fillX(padding: CGFloat = 0) {
-        guard let superview = superview else {
-            NSLog("No superview to fill horizontally")
-            return
-        }
-
-        widthAnchor.constraint(equalTo: superview.widthAnchor, constant: padding).activate()
-    }
-    
-    func fillY(padding: CGFloat = 0) {
-        guard let superview = superview else {
-            NSLog("No superview to fill vertically")
-            return
-        }
-
-        heightAnchor.constraint(equalTo: superview.heightAnchor, constant: padding).activate()
-    }
-    
-    func fillXY(padding: CGFloat = 0) {
-        fillX(padding: padding)
-        fillY(padding: padding)
-    }
 }
 

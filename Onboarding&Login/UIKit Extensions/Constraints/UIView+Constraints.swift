@@ -7,6 +7,7 @@
 import UIKit
 
 // Debugging flag to set background colors?
+// XYKit
 
 // MARK: - Snapping to edges
 
@@ -15,17 +16,42 @@ import UIKit
 
 public extension UIView {
     
-    func sizeX(_ width: CGFloat) {
+    var compressionX: UILayoutPriority {
+        get { contentCompressionResistancePriority(for: .horizontal) }
+        set { setContentCompressionResistancePriority(newValue, for: .horizontal)}
+    }
+    var compressionY: UILayoutPriority {
+        get { contentCompressionResistancePriority(for: .vertical) }
+        set { setContentCompressionResistancePriority(newValue, for: .vertical) }
+    }
+
+    var huggingX: UILayoutPriority {
+        get { contentHuggingPriority(for: .horizontal) }
+        set { setContentCompressionResistancePriority(newValue, for: .horizontal) }
+    }
+    var huggingY: UILayoutPriority {
+        get { contentHuggingPriority(for: .vertical) }
+        set { setContentCompressionResistancePriority(newValue, for: .vertical) }
+    }
+    
+}
+
+public extension UIView {
+    
+    @discardableResult
+    func sizeX(_ width: CGFloat) -> NSLayoutConstraint {
         widthAnchor.constraint(equalToConstant: width).activate()
     }
     
-    func sizeY(_ height: CGFloat) {
+    @discardableResult
+    func sizeY(_ height: CGFloat) -> NSLayoutConstraint {
         heightAnchor.constraint(equalToConstant: height).activate()
     }
     
-    func sizeXY(width: CGFloat, height: CGFloat) {
-        sizeX(width)
-        sizeY(height)
+    #warning("Test this one")
+    @discardableResult
+    func sizeXY(width: CGFloat, height: CGFloat) -> (width: NSLayoutConstraint, height: NSLayoutConstraint) {
+        ( width: sizeX(width), height: sizeY(height) )
     }
     
 }
@@ -34,17 +60,19 @@ public extension UIView {
 
 public extension UIView {
     
-    func sizeX(equalTo view: UIView, part: CGFloat = 1) {
+    @discardableResult
+    func sizeX(equalTo view: UIView, multiplier: CGFloat = 1) -> NSLayoutConstraint {
         widthAnchor.constraint(equalTo: view.widthAnchor).activate()
     }
     
-    func sizeY(equalTo view: UIView, part: CGFloat = 1) {
+    @discardableResult
+    func sizeY(equalTo view: UIView, multiplier: CGFloat = 1) -> NSLayoutConstraint {
         heightAnchor.constraint(equalTo: view.heightAnchor).activate()
     }
     
-    func sizeXY(equalTo view: UIView, part: CGFloat = 1) {
-        sizeX(equalTo: view, part: part)
-        sizeY(equalTo: view, part: part)
+    @discardableResult
+    func sizeXY(equalTo view: UIView, multiplier: CGFloat = 1) -> (width: NSLayoutConstraint, height: NSLayoutConstraint) {
+        (width: sizeX(equalTo: view, multiplier: multiplier), height: sizeY(equalTo: view, multiplier: multiplier))
     }
     
 }
@@ -54,30 +82,17 @@ public extension UIView {
 public extension UIView {
     
     enum CenteringConstraintX {
-        
-        case withSuperview
-        case withAnchor(NSLayoutAnchor<NSLayoutXAxisAnchor>)
-        
+        case superview
+        case anchor(NSLayoutAnchor<NSLayoutXAxisAnchor>)
     }
     
     enum CenteringConstraintY {
-        
-        case withSuperview
-        case withAnchor(NSLayoutAnchor<NSLayoutYAxisAnchor>)
-        
+        case superview
+        case anchor(NSLayoutAnchor<NSLayoutYAxisAnchor>)
     }
-    
-    #warning("start here")
-    enum Axis {
-        case X(CenteringConstraintX)
-        case Y(CenteringConstraintY)
-        case XY
-    }
-    
-    // tableView.center.XY.withSuperview()
     
     @discardableResult
-    func centerX(_ centerConstraint: CenteringConstraintX = .withSuperview) -> NSLayoutConstraint {
+    func centerX(with centerConstraint: CenteringConstraintX = .superview) -> NSLayoutConstraint {
         var constraint = NSLayoutConstraint()
         
         guard let superview = superview else {
@@ -87,10 +102,10 @@ public extension UIView {
         }
         
         switch centerConstraint {
-        case .withSuperview:
+        case .superview:
             constraint = centerXAnchor.constraint(equalTo: superview.centerXAnchor)
             
-        case .withAnchor(let anchor):
+        case .anchor(let anchor):
             constraint = centerXAnchor.constraint(equalTo: anchor)
         }
         
@@ -99,7 +114,7 @@ public extension UIView {
     }
     
     @discardableResult
-    func centerY(_ centerConstraint: CenteringConstraintY = .withSuperview) -> NSLayoutConstraint {
+    func centerY(with centerConstraint: CenteringConstraintY = .superview) -> NSLayoutConstraint {
         var constraint = NSLayoutConstraint()
         
         guard let superview = superview else {
@@ -109,10 +124,10 @@ public extension UIView {
         }
         
         switch centerConstraint {
-        case .withSuperview:
+        case .superview:
             constraint = centerYAnchor.constraint(equalTo: superview.centerYAnchor)
             
-        case .withAnchor(let anchor):
+        case .anchor(let anchor):
             constraint = centerYAnchor.constraint(equalTo: anchor)
         }
         
@@ -120,9 +135,10 @@ public extension UIView {
         return constraint
     }
     
-    func centerXY() {
-        centerX()
-        centerY()
+    #warning("Test this one")
+    @discardableResult
+    func centerXY() -> (x: NSLayoutConstraint, y: NSLayoutConstraint) {
+        (x: centerX(), y: centerY())
     }
 
 }
@@ -131,17 +147,20 @@ public extension UIView {
 
 public extension UIView {
     
-    func alignX(with view: UIView, offset: CGFloat = 0) {
+    @discardableResult
+    func alignX(with view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: offset).activate()
     }
     
-    func alignY(with view: UIView, offset: CGFloat = 0) {
+    @discardableResult
+    func alignY(with view: UIView, offset: CGFloat = 0) -> NSLayoutConstraint {
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: offset).activate()
     }
 
-    func alignXY(with view: UIView) {
-        alignX(with: view)
-        alignY(with: view)
+    #warning("Check this one")
+    @discardableResult
+    func alignXY(with view: UIView) -> (x: NSLayoutConstraint, y: NSLayoutConstraint) {
+        (x: alignX(with: view), y: alignY(with: view))
     }
     
 }
@@ -150,28 +169,79 @@ public extension UIView {
 
 extension UIView {
     
-    func fillX(part: CGFloat) {
+    @discardableResult
+    func fillX(multiplier: CGFloat = 1) -> NSLayoutConstraint? {
         guard let superview = superview else {
             NSLog("No superview to partially fill horizontally")
-            return
+            
+            return nil
         }
         
-        widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: part).activate()
+        return widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: multiplier).activate()
     }
     
-    func fillY(part: CGFloat) {
+    @discardableResult
+    func fillY(multiplier: CGFloat = 1) -> NSLayoutConstraint? {
         guard let superview = superview else {
             NSLog("No superview to partially fill vertically")
-            return
+            
+            return nil
         }
         
-        heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: part).activate()
+        return heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: multiplier).activate()
     }
     
-    func fillXY(part: CGFloat) {
-        fillX(part: part)
-        fillY(part: part)
+    @discardableResult
+    func fillXY(multiplier: CGFloat = 1) -> (width: NSLayoutConstraint, height: NSLayoutConstraint)? {
+        if let width = fillX(multiplier: multiplier),
+           let height = fillY(multiplier: multiplier) {
+            return (width, height)
+        }
+        
+        return nil
     }
+    
+    // MARK: - Filling superview with an optional padding
+    
+    func fillX(padding: CGFloat = 0) {
+        guard let superview = superview else {
+            NSLog("No superview to fill horizontally")
+            return
+        }
+
+        widthAnchor.constraint(equalTo: superview.widthAnchor, constant: padding).activate()
+    }
+    
+    func fillY(padding: CGFloat = 0) {
+        guard let superview = superview else {
+            NSLog("No superview to fill vertically")
+            return
+        }
+
+        #warning("Test this one")
+        heightAnchor.constraint(equalTo: superview.heightAnchor, constant: padding).activate()
+    }
+    
+    func fillXY(padding: CGFloat = 0) {
+        fillX(padding: padding)
+        fillY(padding: padding)
+    }
+    
+    #warning("FillX with safe areas and margins")
+//    enum ConstraintXY {
+//        case edges
+//        case safeArea
+//        case margins
+//    }
+//
+//    enum EdgeConstraintY {
+//
+//        case bounds
+//        case safeArea
+//        case margins
+//        case anchor(NSLayoutAnchor<NSLayoutYAxisAnchor>)
+//
+//    }
     
 }
 

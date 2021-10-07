@@ -28,12 +28,20 @@ class LoginView: CustomView {
     }
     
     override func setupLayout() {
-        label.centerXY()
+        label.centerXY() // Centers label in superview
         
         button.sizeXY(width: 100, height: 50)
         
-        button.centerX()
-        button.centerY(.withAnchor(label.centerYAnchor)).offset(50)
+        let constraint = label.sizeX(equalTo: button)
+        constraint.deactivate()
+        
+        button.centerX() // Centers horizontally in superview
+        button.centerY(with: .anchor(label.centerYAnchor)).offset(50)
+        
+        label.fillX(padding: 20) // Fill superview with padding of 20
+        
+        button.huggingX = .defaultHigh
+        label.compressionX = .defaultLow
     }
 
     override func layoutSubviews() {

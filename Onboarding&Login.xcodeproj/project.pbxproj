@@ -28,6 +28,8 @@
 		CF733FAF270C7D0900F23EC4 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FAE270C7D0900F23EC4 /* UIStackView+Extensions.swift */; };
 		CF733FB3270C833700F23EC4 /* UIView+EdgeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FB2270C833700F23EC4 /* UIView+EdgeConstraints.swift */; };
 		CF733FB5270C844E00F23EC4 /* UIView+Resistance&Hugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FB4270C844E00F23EC4 /* UIView+Resistance&Hugging.swift */; };
+		CF733FBB270EF1F200F23EC4 /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FBA270EF1F200F23EC4 /* UIView+Anchors.swift */; };
+		CF733FBD270EF34700F23EC4 /* UIView+Compression&Hugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF733FBC270EF34700F23EC4 /* UIView+Compression&Hugging.swift */; };
 		CFB440752701AB9B0026B4FB /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440742701AB9B0026B4FB /* CustomView.swift */; };
 		CFB440792701B5870026B4FB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB440782701B5870026B4FB /* CustomViewController.swift */; };
 		CFB4407B2701C8280026B4FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB4407A2701C8280026B4FB /* LoginView.swift */; };
@@ -60,6 +62,8 @@
 		CF733FAE270C7D0900F23EC4 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		CF733FB2270C833700F23EC4 /* UIView+EdgeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EdgeConstraints.swift"; sourceTree = "<group>"; };
 		CF733FB4270C844E00F23EC4 /* UIView+Resistance&Hugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Resistance&Hugging.swift"; sourceTree = "<group>"; };
+		CF733FBA270EF1F200F23EC4 /* UIView+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		CF733FBC270EF34700F23EC4 /* UIView+Compression&Hugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Compression&Hugging.swift"; sourceTree = "<group>"; };
 		CFB440742701AB9B0026B4FB /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		CFB440782701B5870026B4FB /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		CFB4407A2701C8280026B4FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				CF733F9D270C443600F23EC4 /* UIView+Constraints.swift */,
 				CF733FB4270C844E00F23EC4 /* UIView+Resistance&Hugging.swift */,
 				CF733FB2270C833700F23EC4 /* UIView+EdgeConstraints.swift */,
+				CF733FBA270EF1F200F23EC4 /* UIView+Anchors.swift */,
+				CF733FBC270EF34700F23EC4 /* UIView+Compression&Hugging.swift */,
 			);
 			path = Constraints;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				CF733FA7270C7C4E00F23EC4 /* UIView+Extensions.swift in Sources */,
 				CF733FA1270C7B6200F23EC4 /* UILabel+Extensions.swift in Sources */,
 				CF3950F126FCC72B00395EE5 /* Coordinator.swift in Sources */,
+				CF733FBB270EF1F200F23EC4 /* UIView+Anchors.swift in Sources */,
 				CF3950E126FCC6A600395EE5 /* OnboardingViewController.swift in Sources */,
 				CF733F9E270C443600F23EC4 /* UIView+Constraints.swift in Sources */,
 				CF733FB3270C833700F23EC4 /* UIView+EdgeConstraints.swift in Sources */,
@@ -323,6 +330,7 @@
 				CF733FAD270C7CCB00F23EC4 /* UIScrollView+Extensions.swift in Sources */,
 				CFB440792701B5870026B4FB /* CustomViewController.swift in Sources */,
 				CF39510526FE0E1400395EE5 /* NSLayoutConstraint+Extensions.swift in Sources */,
+				CF733FBD270EF34700F23EC4 /* UIView+Compression&Hugging.swift in Sources */,
 				CF39510826FE10D000395EE5 /* SignupView.swift in Sources */,
 				CF3950F526FCCF0900395EE5 /* SignupController.swift in Sources */,
 				CFB440862702110A0026B4FB /* CompositionRoot.swift in Sources */,

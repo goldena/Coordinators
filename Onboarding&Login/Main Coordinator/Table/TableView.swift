@@ -18,10 +18,10 @@ class TableView: CustomView {
     }
     
     override func setupLayout() {
-        tableView.leading(.toSafeArea).padding(50)
-        tableView.trailing(.toSafeArea)
-        tableView.top(.toSafeArea)
-        tableView.bottom(.toBounds)
+        tableView.leading(to: .safeArea).padding(50)
+        tableView.trailing(to: .safeArea)
+        tableView.top(to: .safeArea)
+        tableView.bottom(to: .bounds)
     }
     
 }
